@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %}Registro{% endblock %}</title>
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'recetas/css/main.css' %}" rel="stylesheet">
+
+    <script src="{% static 'bootstrap/js/popper.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a class="me-3" href={% url 'home' %}>Home</a>
+            <a class="me-3" href={% url 'registro' %}>Registro</a>
+        </div>
+    </header>
+    <div class ="container">
+    {% block content%}{% endblock%}
+    </div>
+    <footer>
+        <a class = "m-3" href={% url 'contacto' %}>Contacto</a>
+    </footer>
+</body>
+</html>
