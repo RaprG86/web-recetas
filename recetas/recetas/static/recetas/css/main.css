@@ -11,3 +11,32 @@ footer a, footer a:hover{
     color: #ffffff;
     text-decoration: none;
 }
+
+header .navbar-nav{
+    align-items: center;
+}
+
+.main-container{
+    padding-top: 20px;
+}
+
+@media (max-width: 990px) {
+    .navbar-collapse{
+        margin-top:10px;
+    }
+    .navbar-collapse .nav-item{
+    
+            border-top:solid 1px rgb(139, 139, 139);
+            width: 100%;
+            padding: 10px;
+    }
+    
+}
+
+
+
+
+
+
+
+
