@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Home{% endblock %}
+
+{% block content %}
+{% for receta in recetas %}
+<div class="card" style="width: 18rem;">
+  <img src="{{ receta.imagen.url }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{ receta.nombre }}</h5>
+    <p class="card-text">
+    <ul class="lista-ingredientes">
+    {% for ingrediente in receta.ingredientes.all %}
+    <li>
+    {{ ingrediente.nombre }}
+    </li>
+    {% endfor %}
+    </ul>
+    </p>
+    <a href="#" class="btn btn-outline-dark btn-sm vermas">Ver receta completa</a>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}
+

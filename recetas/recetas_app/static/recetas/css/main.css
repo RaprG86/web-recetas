@@ -1,0 +1,59 @@
+footer{
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #444444;
+    color: #ffffff;
+}
+
+footer a, footer a:hover{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+header .navbar-nav{
+    align-items: center;
+}
+
+.main-container{
+    padding-top: 20px;
+    padding-bottom: 80px;
+}
+
+@media (max-width: 990px) {
+    .navbar-collapse{
+        margin-top:10px;
+    }
+    .navbar-collapse .nav-item{
+    
+        border-top:solid 1px rgb(139, 139, 139);
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+.logo{
+    Max-width: 120px;
+}
+
+.blue{
+    color: blue;
+}
+
+.vermas{
+    width: 100%;
+}
+
+.lista-ingredientes{
+    list-style: none;
+    padding-left: 0;
+}
+
+
+
+
+
+
+
+

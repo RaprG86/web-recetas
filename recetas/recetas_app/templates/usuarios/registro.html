@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Registro{% endblock %}
+
+{% block content %}
+<div class="col-10 col-sm-10 col-md-8 col-lg-6 offset-lg-3 offset-md-2 offset-sm-1 offset-1">
+    <form action="{% url 'registro' %}" method="POST">
+     {% csrf_token %}
+<div class="text-danger">{{error|default:''}}<b></b></div>
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre" name="name" required value ={{ name|default:'' }}>
+        </div>
+        <div class="mb-3">
+          <label for="apellido" class="form-label">Apellido</label>
+          <input type="text" class="form-control" id="apellido" name="lastname" required value ={{ lastname|default:'' }}>
+        </div>
+          <div class="mb-3">
+          <label for="usuario" class="form-label">Nombre Usuario</label>
+          <input type="text" class="form-control" id="usuario" name="username" required value ={{ username|default:'' }}>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" name="email" required value ={{ email|default:'' }}>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Crear Cuenta</button>
+    </form>
+    <br>
+    <p>¿Ya tienes cuenta? <a href="{% url 'login' %}">Conéctate</a></p>
+</div>
+
+
+{% endblock %}

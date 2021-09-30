@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Registro Exitoso{% endblock %}
+
+{% block content %}
+<div class="col-10 col-sm-10 col-md-8 col-lg-6 offset-lg-3 offset-md-2 offset-sm-1 offset-1">
+    <h1>Login</h1>
+    <form action="{% url 'login' %}" method="POST">
+     {% csrf_token %}
+        <div class="text-success">{{response}}<b></b></div>
+         <div class="text-danger">{{error}}<b></b></div>
+        <br>
+          <div class="mb-3"
+          <label for="usuario" class="form-label">Nombre Usuario</label>
+          <input type="text" class="form-control" id="usuario" name="username" required value ={{ username|default:'' }}>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+    </form>
+    <br>
+     <p>¿No tienes cuenta? <a href="{% url 'registro' %}">Registrate</a></p>
+</div>
+{% endblock %}
