@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.conf.urls.static import static
 from django.conf import settings
+from recetas_app.models.recetas import Receta
+from recetas_app.views.recetas_views import receta
 from recetas_app.views.home_views import home
 from recetas_app.views.contacto_views import contacto
 from recetas_app.views.usuarios.registro_views import registro, login, logout
@@ -26,6 +28,7 @@ urlpatterns = [
     path('registro/', registro, name = 'registro'),
     path('contacto/', contacto, name = 'contacto'),
     path('login/', login, name = 'login'),
-     path('logout/', logout, name = 'logout'),
+    path('logout/', logout, name = 'logout'),
     path('admin/', admin.site.urls),
+    path('recetas/<slug:slug>$',receta, name = 'receta'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

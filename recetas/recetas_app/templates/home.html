@@ -12,12 +12,12 @@
     <ul class="lista-ingredientes">
     {% for ingrediente in receta.ingredientes.all %}
     <li>
-    {{ ingrediente.nombre }}
+    {{ ingrediente.nombre|truncatechars:35 }}
     </li>
     {% endfor %}
     </ul>
     </p>
-    <a href="#" class="btn btn-outline-dark btn-sm vermas">Ver receta completa</a>
+    <a href="{% url 'receta' slug=receta.slug %}" class="btn btn-outline-dark btn-sm vermas">Ver receta completa</a>
   </div>
 </div>
 {% endfor %}
