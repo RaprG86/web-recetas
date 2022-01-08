@@ -30,5 +30,5 @@ urlpatterns = [
     path('login/', login, name = 'login'),
     path('logout/', logout, name = 'logout'),
     path('admin/', admin.site.urls),
-    path('recetas/<slug:slug>$',receta, name = 'receta'),
+    path('recetas/<slug:slug>',receta, name = 'receta'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
